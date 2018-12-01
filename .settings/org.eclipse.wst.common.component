@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="MyAuction01">
+    <wb-module deploy-name="A-Simple-SSM-Project">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/config"/>
-        <property name="context-root" value="MyAuction01"/>
-        <property name="java-output-path" value="/MyAuction01/WebRoot/WEB-INF/classes"/>
+        <property name="java-output-path" value="/A-Simple-SSM-Project/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="A-Simple-SSM-Project"/>
     </wb-module>
 </project-modules>
