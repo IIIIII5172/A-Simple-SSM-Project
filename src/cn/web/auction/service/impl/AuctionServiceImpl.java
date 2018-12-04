@@ -42,4 +42,9 @@ public class AuctionServiceImpl implements AuctionService {
 		List<Auction> list = auctionMapper.selectByExample(example);
 		return list;
 	}
+
+	@Override
+	public void addAuction(Auction auction) {
+		auctionMapper.insert(auction);
+	}
 }

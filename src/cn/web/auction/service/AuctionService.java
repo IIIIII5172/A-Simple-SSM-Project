@@ -10,5 +10,6 @@ public interface AuctionService {
 	 * 查询所有商品
 	 */
 	public List<Auction> findAuctions(Auction auction);
+	public void addAuction(Auction auction);
 	
 }

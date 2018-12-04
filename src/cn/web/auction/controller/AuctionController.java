@@ -1,7 +1,12 @@
 package cn.web.auction.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
@@ -43,4 +49,35 @@ public class AuctionController {
 		mv.setViewName("index");
 		return mv;
 	}
+	
+	/**
+	 * 文件上传
+	 * @param auction
+	 * @param pic
+	 * @return
+	 */
+	@RequestMapping("publishAuctions")
+	public String publicAuctions(Auction auction,MultipartFile pic,HttpSession session){
+		//将二进制数据pic保存到tomcat目录
+		try {
+			//指定文件的保存目录（在服务器端的一个绝对路径)
+			//坑--eclipse默认项目部署在workplace中，需要改为部署在tomcat里
+			String path=session.getServletContext().getRealPath("upload");
+			System.out.println(path);
+			if(pic.getSize()>0){
+				File targetFile=new File(path,pic.getOriginalFilename());
+				//将文件写入目录
+				pic.transferTo(targetFile);
+				//把文件名和文件类型设置到pojo
+				auction.setAuctionpic(pic.getOriginalFilename());
+				auction.setAuctionpictype(pic.getContentType());
+			}
+			auctionService.addAuction(auction);
+		}  catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/auction/queryAuctions ";
+	}
 }
+

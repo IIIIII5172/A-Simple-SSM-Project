@@ -39,7 +39,7 @@
     	<input type="submit" value="查询" class="spbg buttombg f14 sale-buttom" />	
   	</form>
   		<c:if test="${sessionScope.user.userisadmin==1}">
-  			<input type="button" value="发布" class="spbg buttombg f14 sale-buttom buttomb"/>
+  			<input type="button" value="发布" onclick="javascript:location='${pageContext.request.contextPath}/addAuction.jsp'"class="spbg buttombg f14 sale-buttom buttomb"/>
   		</c:if>
   </div>
   
