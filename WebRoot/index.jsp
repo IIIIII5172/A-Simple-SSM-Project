@@ -29,11 +29,11 @@
    		<label for="time">开始时间</label>
     	<input name="auctionstarttime"
     		value="<fmt:formatDate value="${condition.auctionstarttime}" pattern="yyyy-MM-dd HH:mm:ss"/>"
-    		type="text" id="time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd HH:mm:ss')"/>
+    		type="text" id="time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
    		<label for="end-time">结束时间</label>
     	<input name="auctionendtime"
     		value="<fmt:formatDate value="${condition.auctionendtime}" pattern="yyyy-MM-dd HH:mm:ss"/>"
-    		type="text" id="end-time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd HH:mm:ss')"/>
+    		type="text" id="end-time" class="nwinput" readonly="readonly" onclick="selectDate(this,'yyyy-MM-dd hh:mm:ss')"/>
     	<label for="auctionstartprice">起拍价</label>
     	<input name="auctionstartprice" value="${condition.auctionstartprice}" type="text" id="price" class="nwinput" />
     	<input type="submit" value="查询" class="spbg buttombg f14 sale-buttom" />	
