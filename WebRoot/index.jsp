@@ -69,7 +69,7 @@
        	</li>
         <li>${auction.auctionstartprice}</li>
         <li class="borderno red">
-           <a href="#" title="竞拍">修改</a>|
+           <a href="${pageContext.request.contextPath}/auction/toUpdate/${auction.auctionid}" title="竞拍">修改</a>|
           <a href="#" title="竞拍" onclick="abc();">删除</a>
         </li>
      </ul>

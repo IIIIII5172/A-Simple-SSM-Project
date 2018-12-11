@@ -47,4 +47,14 @@ public class AuctionServiceImpl implements AuctionService {
 	public void addAuction(Auction auction) {
 		auctionMapper.insert(auction);
 	}
+
+	@Override
+	public void updateAuction(Auction auction) {
+		auctionMapper.updateByPrimaryKey(auction);
+	}
+
+	@Override
+	public Auction getAuctionById(int auctionid) {
+		return auctionMapper.selectByPrimaryKey(auctionid);
+	}
 }
